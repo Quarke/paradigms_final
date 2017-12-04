@@ -1,0 +1,20 @@
+<style>
+
+html {
+    -moz-transform: scale(0.8, 0.8); /* Moz-browsers */
+    zoom: 0.8; /* Other non-webkit browsers */
+    zoom: 80%; /* Webkit browsers */
+}
+
+.mdl-card {
+  width: 320px;
+  height: 150px;
+  margin-left: 50px;
+}
+
+#card_area {
+    width: 100vw;
+    height: 85vh;
+}
+
+</style>
