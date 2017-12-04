@@ -9,6 +9,7 @@ function generate_guid(count) {
     return guid  // otherwise, recurse on generate
 }
 
+
 //taken from standard underscore library
 function debounce(func, delay) {
   console.log(`called`)
@@ -25,15 +26,14 @@ function debounce(func, delay) {
 
 class Svalbard_API {
   constructor(port) {
-    this.port = port
+    this.port  = port
     this.$skip = 0
     this.$search = null
   }
 
   static async get(skip, search) {
-    console.log(this.port)
     this.$skip = skip ? skip : 0
-    let url = `https://localhost/api/svalbard?$skip=${this.$skip}`
+    let url = `https://localhost:${port}/api/svalbard?$skip=${this.$skip}`
     if(this.$search && this.$search != ``){
       url += `&$search=${this.$search}`
     }
@@ -43,12 +43,12 @@ class Svalbard_API {
   }
 
   static async find(id) {
-    const resp = await fetch(`https://localhost/api/svalbard/${id}`)
+    const resp = await fetch(`https://localhost:${port}/api/svalbard/${id}`)
     return resp.json()
   }
 
   static async put(id, data) {
-    const resp = await fetch(`https://localhost/api/svalbard/id`, {
+    const resp = await fetch(`https://localhost:${port}/api/svalbard/id`, {
         method: 'PUT',
         mode: 'cors', 
         redirect: 'follow',
@@ -60,7 +60,7 @@ class Svalbard_API {
   }
 
   static async post(data) {
-    const resp = await fetch(`https://localhost/api/svalbard`, {
+    const resp = await fetch(`https://localhost:${port}/api/svalbard`, {
         method: 'POST',
         mode: 'cors', 
         redirect: 'follow',
@@ -72,7 +72,7 @@ class Svalbard_API {
   }
 
   static async delete(id, data) {
-    const resp = await fetch(`https://localhost/api/svalbard/id`, {
+    const resp = await fetch(`https://localhost:${port}/api/svalbard/id`, {
         method: 'DELETE',
         mode: 'cors', 
         redirect: 'follow',
@@ -84,7 +84,7 @@ class Svalbard_API {
   }
 
   static async reset(){
-    const resp = await fetch(`https://localhost/api/reset`, {
+    const resp = await fetch(`https://localhost:${port}/api/reset`, {
         method: 'PATCH',
         mode: 'cors', 
         redirect: 'follow'
@@ -93,7 +93,7 @@ class Svalbard_API {
   }
 
   static async meta(){
-    const resp = await fetch(`https://localhost/api/meta`, {
+    const resp = await fetch(`https://localhost:${port}/api/meta`, {
         method: 'GET',
         mode: 'cors', 
         redirect: 'follow'
