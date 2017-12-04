@@ -33,7 +33,7 @@ class Svalbard_API {
 
   static async get(skip, search) {
     this.$skip = skip ? skip : 0
-    let url = `https://localhost:${port}/api/svalbard?$skip=${this.$skip}`
+    let url = `https://afternoon-oasis-92213.herokuapp.com/api/svalbard?$skip=${this.$skip}`
     if(this.$search && this.$search != ``){
       url += `&$search=${this.$search}`
     }
@@ -43,12 +43,12 @@ class Svalbard_API {
   }
 
   static async find(id) {
-    const resp = await fetch(`https://localhost:${port}/api/svalbard/${id}`)
+    const resp = await fetch(`https://afternoon-oasis-92213.herokuapp.com/api/svalbard/${id}`)
     return resp.json()
   }
 
   static async put(id, data) {
-    const resp = await fetch(`https://localhost:${port}/api/svalbard/id`, {
+    const resp = await fetch(`https://afternoon-oasis-92213.herokuapp.com/api/svalbard/id`, {
         method: 'PUT',
         mode: 'cors', 
         redirect: 'follow',
@@ -60,7 +60,7 @@ class Svalbard_API {
   }
 
   static async post(data) {
-    const resp = await fetch(`https://localhost:${port}/api/svalbard`, {
+    const resp = await fetch(`https://afternoon-oasis-92213.herokuapp.com/api/svalbard`, {
         method: 'POST',
         mode: 'cors', 
         redirect: 'follow',
@@ -72,7 +72,7 @@ class Svalbard_API {
   }
 
   static async delete(id, data) {
-    const resp = await fetch(`https://localhost:${port}/api/svalbard/id`, {
+    const resp = await fetch(`https://afternoon-oasis-92213.herokuapp.com/api/svalbard/id`, {
         method: 'DELETE',
         mode: 'cors', 
         redirect: 'follow',
@@ -84,7 +84,7 @@ class Svalbard_API {
   }
 
   static async reset(){
-    const resp = await fetch(`https://localhost:${port}/api/reset`, {
+    const resp = await fetch(`https://afternoon-oasis-92213.herokuapp.com/api/reset`, {
         method: 'PATCH',
         mode: 'cors', 
         redirect: 'follow'
@@ -93,7 +93,7 @@ class Svalbard_API {
   }
 
   static async meta(){
-    const resp = await fetch(`https://localhost:${port}/api/meta`, {
+    const resp = await fetch(`https://afternoon-oasis-92213.herokuapp.com/api/meta`, {
         method: 'GET',
         mode: 'cors', 
         redirect: 'follow'

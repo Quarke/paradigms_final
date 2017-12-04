@@ -13,8 +13,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 const svalbard = new Svalbard()
 
-console.log( process.env.PORT )
-
 //create a router
 const router = express.Router()
 
