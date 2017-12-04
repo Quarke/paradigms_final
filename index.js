@@ -11,7 +11,7 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-const svalbard = new Svalbard()
+const svalbard = new Svalbard(process.env.PORT)
 
 //create a router
 const router = express.Router()
