@@ -25,7 +25,6 @@ function debounce(func, delay) {
 
 class Svalbard_API {
   constructor(port) {
-    this.port  = port
     this.$skip = 0
     this.$search = null
   }
@@ -42,12 +41,12 @@ class Svalbard_API {
   }
 
   static async find(id) {
-    const resp = await fetch(`https://localhost:${this.port}/api/svalbard/${id}`)
+    const resp = await fetch(`https://localhost/api/svalbard/${id}`)
     return resp.json()
   }
 
   static async put(id, data) {
-    const resp = await fetch(`https://localhost:${this.port}/api/svalbard/id`, {
+    const resp = await fetch(`https://localhost/api/svalbard/id`, {
         method: 'PUT',
         mode: 'cors', 
         redirect: 'follow',
@@ -59,7 +58,7 @@ class Svalbard_API {
   }
 
   static async post(data) {
-    const resp = await fetch(`https://localhost:${this.port}/api/svalbard`, {
+    const resp = await fetch(`https://localhost/api/svalbard`, {
         method: 'POST',
         mode: 'cors', 
         redirect: 'follow',
@@ -71,7 +70,7 @@ class Svalbard_API {
   }
 
   static async delete(id, data) {
-    const resp = await fetch(`https://localhost:${this.port}/api/svalbard/id`, {
+    const resp = await fetch(`https://localhost/api/svalbard/id`, {
         method: 'DELETE',
         mode: 'cors', 
         redirect: 'follow',
@@ -83,7 +82,7 @@ class Svalbard_API {
   }
 
   static async reset(){
-    const resp = await fetch(`https://localhost:${this.port}/api/reset`, {
+    const resp = await fetch(`https://localhost/api/reset`, {
         method: 'PATCH',
         mode: 'cors', 
         redirect: 'follow'
@@ -92,7 +91,7 @@ class Svalbard_API {
   }
 
   static async meta(){
-    const resp = await fetch(`https://localhost:${this.port}/api/meta`, {
+    const resp = await fetch(`https://localhost/api/meta`, {
         method: 'GET',
         mode: 'cors', 
         redirect: 'follow'
