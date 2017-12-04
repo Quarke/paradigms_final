@@ -27,6 +27,7 @@ console.log( process.env.PORT )
 
 class Svalbard_API {
   constructor(port) {
+    console.log(port)
     this.$skip = 0
     this.$search = null
   }
