@@ -23,8 +23,6 @@ function debounce(func, delay) {
   }
 }
 
-console.log( process.env.PORT )
-
 class Svalbard_API {
   constructor(port) {
     console.log(port)
