@@ -31,7 +31,7 @@ class Svalbard_API {
 
   static async get(skip, search) {
     this.$skip = skip ? skip : 0
-    let url = `https://localhost:${this.port}/api/svalbard?$skip=${this.$skip}`
+    let url = `https://localhost/api/svalbard?$skip=${this.$skip}`
     if(this.$search && this.$search != ``){
       url += `&$search=${this.$search}`
     }
