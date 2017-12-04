@@ -25,12 +25,13 @@ function debounce(func, delay) {
 
 class Svalbard_API {
   constructor(port) {
-    console.log(port)
+    this.port = port
     this.$skip = 0
     this.$search = null
   }
 
   static async get(skip, search) {
+    console.log(this.port)
     this.$skip = skip ? skip : 0
     let url = `https://localhost/api/svalbard?$skip=${this.$skip}`
     if(this.$search && this.$search != ``){
