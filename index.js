@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const app = express()
 
 //import library
-const Svalbard = require('./svalbard.js')
+const Svalbard = require('./server/svalbard.js')
 
 // Confifure CORS on the server and parsing body inputs
 app.use(cors())
@@ -106,4 +106,5 @@ router.route('/meta')
 
 
 app.use('/api', router)
+app.use('/', express.static('pages'))
 app.listen(3000, () => console.log('Example app listening on port 3000!'))

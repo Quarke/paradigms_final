@@ -3,7 +3,7 @@ const len = 12
 
 module.exports = class Svalbard {
     constructor(){
-        this._json = JSON.parse( fs.readFileSync('./data/svalbard.json') )
+        this._json = JSON.parse( fs.readFileSync('./server/data/svalbard.json') )
         this.key_list = Object.keys(this._json[0])
         // console.log(this._json[0])
         // console.log(this._json.length)
