@@ -66,6 +66,7 @@ test("Test POST", async t => {
            data
         })
     })
+    console.log(resp)
 
     let url = `http://localhost:3000/api/svalbard/${id}`
     resp = await fetch(url)

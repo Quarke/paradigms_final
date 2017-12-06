@@ -5,9 +5,6 @@ module.exports = class Svalbard {
     constructor(){
         this._json = JSON.parse( fs.readFileSync('./server/data/svalbard.json') )
         this.key_list = Object.keys(this._json[0])
-        // console.log(this._json[0])
-        // console.log(this._json.length)
-        // console.log(this.key_list)
     }
 
     async sanitize_keys(obj){
@@ -85,7 +82,10 @@ module.exports = class Svalbard {
     }
 
     async post(opts, query){
+        console.log("in api")
+        console.log(opts, query)
         if(Object.keys(opts).length === 0 && opts.constructor === Object){
+            console.log("Badly formed")
             throw new Error("Illegal request")
         } else {
             if( opts.hasOwnProperty('sgsv_taxon_id') && opts.hasOwnProperty('genus') && opts.hasOwnProperty('species')){

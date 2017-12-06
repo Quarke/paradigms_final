@@ -51,16 +51,87 @@
           </div>
         </section>
         <section class="mdl-layout__tab-panel" id="fixed-tab-2">
-          <div class="page-content" id="info_area">
-            
+          <div class="page-content mdl-cell mdl-cell--6-col mdl-cell--3-offset" id="info_area">
+            <div class="mdl-cell mdl-cell--12-col">
+              <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp mdl-cell--12-col">
+                <thead>
+                  <tr>
+                    <th> <strong>Key</strong> </th>
+                    <th> <strong>Value</strong>  </th>
+                  </tr>
+                </thead>
+                <tbody id="table_body">
+                  
+                </tbody>
+              </table>
+            </div>
           </div>
         </section>
         <section class="mdl-layout__tab-panel" id="fixed-tab-3">
-          <div class="page-content"><!-- Your content goes here --></div>
+          <div class="page-content">
+
+
+            <div class="page-content mdl-cell mdl-cell--6-col mdl-cell--3-offset" id="info_area">
+            <div class="mdl-cell mdl-cell--12-col">
+
+              <div class="input-card-wide mdl-card mdl-shadow--2dp ">
+                <div class="mdl-card__title">
+                  <h2 class="mdl-card__title-text">Add Entry</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                  <form action="#" id="submit_form">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" pattern="-?[a-zA-Z]+?" id="genus">
+                      <label class="mdl-textfield__label" for="sample4">Genus</label>
+                      <span class="mdl-textfield__error">Input is not a string!</span>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" pattern="-?[a-zA-Z]+?" id="species">
+                      <label class="mdl-textfield__label" for="sample4">Species</label>
+                      <span class="mdl-textfield__error">Input is not a string!</span>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" pattern="-?[a-zA-Z]+?" id="full_name">
+                      <label class="mdl-textfield__label" for="sample4">Full Scientific Name</label>
+                      <span class="mdl-textfield__error">Input is not a string!</span>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sgsv_taxon_id">
+                      <label class="mdl-textfield__label" for="sample4">sgsv_taxon_id</label>
+                      <span class="mdl-textfield__error">Input is not a number!</span>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="seed_boxes">
+                      <label class="mdl-textfield__label" for="sample4">seed_boxes</label>
+                      <span class="mdl-textfield__error">Input is not a number!</span>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="seeds">
+                      <label class="mdl-textfield__label" for="sample4">seeds</label>
+                      <span class="mdl-textfield__error">Input is not a number!</span>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="countries">
+                      <label class="mdl-textfield__label" for="sample4">countries</label>
+                      <span class="mdl-textfield__error">Input is not a number!</span>
+                    </div>
+                  </form>
+                </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="submit_btn">
+                  Submit
+                </a>
+              </div>
+            </div>
+            <!-- Numeric Textfield with Floating Label -->
+            
+          </div>
+        </div>
+          </div>
         </section>
-        <section class="mdl-layout__tab-panel" id="fixed-tab-4">
-          <div class="page-content"><!-- Your content goes here --></div>
-        </section>
+       <!--  <section class="mdl-layout__tab-panel" id="fixed-tab-4">
+          <div class="page-content"></div>
+        </section> -->
       </main>
     </div>
 </body>

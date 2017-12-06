@@ -17,4 +17,14 @@ html {
     height: 85vh;
 }
 
+.input-card-wide.mdl-card {
+    width: 50vw;
+    height: 45vh;
+    margin-top: 50px;
+}
+
+.input-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+
 </style>

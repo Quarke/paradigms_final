@@ -5,6 +5,7 @@ class Doc_Interface {
     this.bck_button = document.getElementById('back')
     this.search_bar = document.getElementById('search_bar')
 
+    this.submit_btn = document.getElementById('submit_btn')
 
     const self = this
     this.fwd_button.addEventListener("click", function(){
@@ -18,7 +19,21 @@ class Doc_Interface {
     this.search_bar.addEventListener("keyup", debounce(function(e) {
       Svalbard_API.$search = e.target.value
       self.renew()
-    }, 200));
+    }, 200))
+
+    this.submit_btn.addEventListener('click', async function(){
+      const data = {
+         "genus": document.getElementById("genus").value,
+         "species": document.getElementById("species").value,
+         "full_scientific_name": document.getElementById("full_name").value,
+         "sgsv_taxon_id": document.getElementById("sgsv_taxon_id").value,
+         "seed_boxes": document.getElementById("seed_boxes").value,
+         "seeds": document.getElementById("seeds").value,
+         "countries": document.getElementById("countries").value
+      }
+      const resp = await Svalbard_API.post(data)
+      console.log(resp)
+    })
   }
 
   async addChild(child){

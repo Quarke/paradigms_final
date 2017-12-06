@@ -8,8 +8,8 @@ const Svalbard = require('./server/svalbard.js')
 
 // Confifure CORS on the server and parsing body inputs
 app.use(cors())
-app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 
 const svalbard = new Svalbard()
 
@@ -40,11 +40,12 @@ router.route('/svalbard')
 
     .post(async function(req, res) {
         try {
-            const resp = await svalbard.post(req.params, req.query)
+            const resp = await svalbard.post(req.body.data, req.query)
 
             //verify if needed
             res.json(resp)
         } catch (err) {
+            console.log(err)
             res.status(400).json(err.message)
         } 
     })
@@ -64,7 +65,7 @@ router.route('/svalbard/:sgsv_taxon_id')
 
     .put(async function(req, res) {
         try {
-            const resp = await svalbard.put(req.params, req.query)
+            const resp = await svalbard.put(req.body, req.query)
 
             //verify if needed
             res.json(resp)
@@ -105,6 +106,7 @@ router.route('/meta')
     })
 
 
-app.use('/api', router)
+
 app.use('/', express.static('pages'))
+app.use('/api', router)
 app.listen(process.env.PORT || 3000, () => console.log('Example app listening on port 3000!'))

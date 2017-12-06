@@ -6,13 +6,11 @@ function generate_guid(count) {
         guid += _sym[parseInt(Math.random() * (_sym.length))]
     }
 
-    return guid  // otherwise, recurse on generate
+    return guid
 }
-
 
 //taken from standard underscore library
 function debounce(func, delay) {
-  console.log(`called`)
   var inDebounce = undefined;
   return function() {
     var context = this,
@@ -60,7 +58,11 @@ class Svalbard_API {
   }
 
   static async post(data) {
-    const resp = await fetch(`https://afternoon-oasis-92213.herokuapp.com/api/svalbard`, {
+    const resp = await fetch("https://afternoon-oasis-92213.herokuapp.com/api/svalbard", {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
         method: 'POST',
         mode: 'cors', 
         redirect: 'follow',
